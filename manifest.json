@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Bug Report Improver",
+  "version": "2.0.0",
+  "description": "Records what really happened on the page (steps, JS errors, failed API calls, screenshot) and turns it into a complete bug report, quality score and Playwright regression test.",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Bug Report Improver"
+  },
+  "permissions": ["storage", "activeTab", "scripting"],
+  "host_permissions": ["https://api.anthropic.com/*"],
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["collector.js"],
+      "run_at": "document_start",
+      "world": "MAIN",
+      "all_frames": false
+    }
+  ]
+}

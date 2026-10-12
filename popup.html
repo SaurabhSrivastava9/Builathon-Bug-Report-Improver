@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <h1>🐞 Bug Report Improver <span class="ver">v2</span></h1>
+  <div id="capture" class="capture">Capturing evidence…</div>
+
+  <textarea id="note" placeholder="Describe the bug in a few words (optional – the recorder already knows your steps and errors)"></textarea>
+
+  <div class="row">
+    <button id="offline" class="primary">Generate report</button>
+    <button id="ai">Improve with Claude ✨</button>
+  </div>
+  <div id="status"></div>
+
+  <div id="quality" class="quality hidden">
+    <div class="qbar"><div id="qfill"></div></div>
+    <div id="qtext"></div>
+    <ul id="qmissing"></ul>
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" data-tab="report">Report</button>
+    <button class="tab" data-tab="evidence">Evidence</button>
+    <button class="tab" data-tab="test">Test</button>
+  </div>
+
+  <section id="pane-report" class="pane">
+    <div class="row tight">
+      <select id="format">
+        <option value="markdown">Markdown / GitHub</option>
+        <option value="jira">Jira</option>
+      </select>
+      <button id="copyReport">Copy</button>
+    </div>
+    <textarea id="output" placeholder="Your structured bug report appears here (editable)"></textarea>
+  </section>
+
+  <section id="pane-evidence" class="pane hidden">
+    <div id="evBody"></div>
+    <div id="shotBox" class="hidden">
+      <img id="shot" alt="Screenshot of the page" />
+      <div class="row tight">
+        <button id="copyShot">Copy image</button>
+        <button id="dlShot">Download</button>
+      </div>
+    </div>
+    <button id="clearTrail" class="link">Clear recorded trail</button>
+  </section>
+
+  <section id="pane-test" class="pane hidden">
+    <p class="hint">Playwright regression test built from your recorded steps. It fails while the bug exists (JS errors or failed API calls) – add the final assertion for the expected result.</p>
+    <textarea id="testcode" readonly placeholder="Generate a report first"></textarea>
+    <button id="copyTest">Copy test</button>
+  </section>
+
+  <details id="histBox">
+    <summary>🕘 History</summary>
+    <ul id="history"></ul>
+  </details>
+
+  <details>
+    <summary>⚙️ Settings (optional Claude mode)</summary>
+    <p class="hint">Everything works offline. For Claude mode add an Anthropic API key (stored only in this browser). Claude mode sends your note and captured evidence to the Anthropic API.</p>
+    <input id="key" type="password" placeholder="sk-ant-..." />
+    <button id="saveKey">Save key</button>
+  </details>
+
+  <script src="improver.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
