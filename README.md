@@ -37,12 +37,11 @@ Everything except Claude mode works **offline**, with no account or key.
 
 1. Open the app you are testing and reproduce the bug normally.
 2. Click the 🐞 icon. The banner shows what was recorded (actions / errors / failed requests).
-3. Optionally type a short note, for example `checkout not working, should go to payment page`. The note can be empty if the recorder caught the problem.
-4. Click **Generate report**, then:
+3. Click **Generate report**, then:
    - **Report** tab: copy as Markdown or Jira.
    - **Evidence** tab: review the recorded steps and errors, and copy or download the screenshot.
    - **Test** tab: copy the Playwright regression test.
-5. Check the **quality meter**. If it lists missing questions, answer them in the report.
+4. Check the **quality meter**. If it lists missing questions, answer them in the report.
 
 ## Example
 
