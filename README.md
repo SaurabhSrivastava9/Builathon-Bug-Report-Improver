@@ -21,9 +21,8 @@ Most "bug report helpers" only rewrite the text you type. This one **captures th
 | ✅ **Report quality score** | Scores the report 0–100 and asks the exact questions a developer would ask (expected result? how often? which build?). |
 | 🧪 **Playwright regression test** | Turns the recorded steps into a ready-to-run Playwright test that **fails while the bug exists** (it asserts there are no JS errors and no failing API calls). |
 | 📋 **Jira / Markdown output** | One click to switch format, plus a history of the last 15 reports. |
-| ✨ **Optional Claude mode** | Sends the facts and evidence to Claude for a polished write-up. It never invents steps or errors. |
 
-Everything except Claude mode works **offline**, with no account or key.
+
 
 ## Install (Developer mode)
 
