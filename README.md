@@ -2,7 +2,6 @@
 
 A Chrome extension that builds a complete bug report from **what really happened on the page**, not just from what you typed.
 
-Built for **SDET AI Buildathon 1.0 – Plugin Mania** (Functional Testing / Test Reporting).
 
 ## The problem
 
